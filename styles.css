@@ -1,0 +1,495 @@
+/*=========================================================
+styles.css
+Estilos generales del sistema de gestión de compras.
+=========================================================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+body{
+    background:#f4f4f4;
+    color:#333;
+    line-height:1.6;
+}
+/*=========================================================
+ENCABEZADO
+=========================================================*/
+header{
+    background:#1f4e79;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+}
+header h1{
+    margin-bottom:10px;
+    font-size:30px;
+}
+header p{
+    font-size:16px;
+}
+/*=========================================================
+MENÚ PRINCIPAL
+=========================================================*/
+.menuPrincipal{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    background:#2f75b5;
+    padding:12px;
+}
+.menuPrincipal a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    padding:10px 14px;
+    border-radius:5px;
+    transition:.3s;
+}
+.menuPrincipal a:hover{
+    background:#1f4e79;
+}
+/*=========================================================
+SECCIONES
+=========================================================*/
+section{
+    width:95%;
+    max-width:1200px;
+    margin:20px auto;
+    background:#fff;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+section h2{
+    margin-bottom:15px;
+    color:#1f4e79;
+}
+/*=========================================================
+MENSAJES
+=========================================================*/
+.mensaje{
+    width:95%;
+    max-width:1200px;
+    margin:20px auto;
+    background:#d4edda;
+    color:#155724;
+    border:1px solid #c3e6cb;
+    border-radius:8px;
+    padding:15px;
+}
+/*=========================================================
+FORMULARIOS
+=========================================================*/
+label{
+    display:block;
+    margin-top:12px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+input,
+select,
+textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:15px;
+}
+textarea{
+    resize:vertical;
+}
+/*=========================================================
+BOTONES
+=========================================================*/
+button{
+    background:#2f75b5;
+    color:#fff;
+    border:none;
+    padding:10px 18px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:.3s;
+}
+button:hover{
+    background:#1f4e79;
+}
+.botonesFormulario{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+/*=========================================================
+BUSCADOR
+=========================================================*/
+.busquedaControles{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    align-items:center;
+}
+.busquedaControles input{
+    flex:1;
+    min-width:250px;
+}
+.busquedaControles button{
+    min-width:140px;
+}
+/*=========================================================
+CATÁLOGO DE PRODUCTOS
+=========================================================*/
+.contenedorProductos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+.tarjetaProducto{
+    background:#fff;
+    border:1px solid #d9d9d9;
+    border-radius:10px;
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    transition:.3s;
+}
+.tarjetaProducto:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+}
+.tarjetaProducto h3{
+    color:#1f4e79;
+    font-size:20px;
+    margin-bottom:12px;
+    text-align:center;
+}
+.tarjetaProducto p{
+    margin:8px 0;
+    text-align:justify;
+    color:#555;
+}
+.tarjetaProducto strong{
+    color:#000;
+}
+.tarjetaProducto button{
+    width:100%;
+    margin-top:15px;
+    padding:12px;
+    font-size:15px;
+    font-weight:bold;
+}
+.tarjetaProducto button:disabled{
+    background:#999;
+    cursor:not-allowed;
+}
+.carritoVacio{
+    grid-column:1/-1;
+    text-align:center;
+    padding:35px;
+    border:2px dashed #cfcfcf;
+    border-radius:8px;
+    background:#fafafa;
+}
+.carritoVacio h3{
+    color:#1f4e79;
+    margin-bottom:10px;
+}
+.carritoVacio p{
+    margin-bottom:15px;
+}
+/*=========================================================
+ESTADO DEL CARRITO
+=========================================================*/
+.estadoCarrito{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+.estadoCarrito p{
+    margin:5px 0;
+    font-size:17px;
+}
+.estadoCarrito strong{
+    color:#1f4e79;
+}
+/*=========================================================
+CARRITO DE COMPRAS
+=========================================================*/
+.carritoCompras{
+    overflow-x:auto;
+}
+.tablaCarrito{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+    background:#fff;
+}
+.tablaCarrito thead{
+    background:#2f75b5;
+    color:#fff;
+}
+.tablaCarrito th{
+    padding:14px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+.tablaCarrito td{
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:center;
+    vertical-align:middle;
+}
+.tablaCarrito tbody tr:nth-child(even){
+    background:#f8f8f8;
+}
+.tablaCarrito tbody tr:hover{
+    background:#eef5fc;
+}
+.tablaCarrito tfoot{
+    background:#f3f3f3;
+    font-weight:bold;
+}
+.tablaCarrito input[type="number"]{
+    width:80px;
+    text-align:center;
+}
+.formCantidad{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+}
+.formCantidad button{
+    margin:0;
+}
+.accionesCarrito{
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+.btnPedido{
+    background:#198754;
+}
+.btnPedido:hover{
+    background:#146c43;
+}
+.btnVaciar{
+    background:#dc3545;
+}
+.btnVaciar:hover{
+    background:#bb2d3b;
+}
+.btnEliminar{
+    background:#dc3545;
+}
+.btnEliminar:hover{
+    background:#bb2d3b;
+}
+/*=========================================================
+TABLAS GENERALES
+=========================================================*/
+table{
+    width:100%;
+}
+table caption{
+    font-weight:bold;
+    margin-bottom:10px;
+}
+/*=========================================================
+ADMINISTRACIÓN DE LA TIENDA
+=========================================================*/
+.panelAdministracion{
+    display:block;
+}
+.contenedorAdministracion{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:22px;
+    margin-top:20px;
+}
+.tarjetaAdministracion{
+    background:#fff;
+    border:1px solid #d9d9d9;
+    border-radius:10px;
+    padding:22px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    transition:.3s;
+}
+.tarjetaAdministracion:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+}
+.tarjetaAdministracion h3{
+    color:#1f4e79;
+    font-size:21px;
+    margin-bottom:15px;
+}
+.tarjetaAdministracion p{
+    color:#555;
+    line-height:1.5;
+    min-height:70px;
+    margin-bottom:18px;
+}
+.tarjetaAdministracion a{
+    text-decoration:none;
+}
+.tarjetaAdministracion button{
+    width:100%;
+    margin-top:5px;
+    padding:12px;
+    font-size:15px;
+    font-weight:bold;
+}
+/*=========================================================
+RESUMEN DEL SISTEMA
+=========================================================*/
+
+.resumenSistema{
+    margin-top:25px;
+}
+.contenedorResumen{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+.tarjetaResumen{
+    background:#2f75b5;
+    color:#fff;
+    text-align:center;
+    padding:25px 15px;
+    border-radius:10px;
+    transition:.3s;
+}
+.tarjetaResumen:hover{
+    transform:translateY(-4px);
+}
+.tarjetaResumen h3{
+    margin-bottom:12px;
+    font-size:18px;
+}
+.tarjetaResumen p{
+    font-size:30px;
+    font-weight:bold;
+}
+/*=========================================================
+ÚLTIMAS COMPRAS
+=========================================================*/
+
+#ultimasCompras table{
+    margin-top:15px;
+}
+
+#ultimasCompras h2{
+    margin-bottom:20px;
+}
+/*=========================================================
+RESEÑAS
+=========================================================*/
+.ultimasResenas{
+    margin-top:25px;
+}
+.tarjetaResena{
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    transition:.3s;
+}
+.tarjetaResena:hover{
+    transform:translateY(-3px);
+    box-shadow:0 6px 14px rgba(0,0,0,.15);
+}
+.tarjetaResena h3{
+    color:#1f4e79;
+    margin-bottom:10px;
+}
+.tarjetaResena p{
+    margin:8px 0;
+}
+.fechaResena{
+    margin-top:12px;
+    font-size:13px;
+    color:#777;
+    text-align:right;
+}
+/*=========================================================
+PIE DE PÁGINA
+=========================================================*/
+footer{
+    background:#1f4e79;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+    margin-top:35px;
+}
+footer p{
+    margin:6px 0;
+}
+/*=========================================================
+RESPONSIVE
+=========================================================*/
+@media(max-width:992px){
+    .contenedorProductos{
+        grid-template-columns:repeat(2,1fr);
+    }
+    .contenedorAdministracion{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+@media(max-width:768px){
+
+    .menuPrincipal{
+        flex-direction:column;
+        align-items:center;
+    }
+    .estadoCarrito{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+    .accionesCarrito{
+        justify-content:center;
+    }
+
+    .contenedorProductos{
+        grid-template-columns:1fr;
+    }
+    .contenedorAdministracion{
+        grid-template-columns:1fr;
+    }
+    .contenedorResumen{
+        grid-template-columns:repeat(2,1fr);
+    }
+    .tablaCarrito{
+        display:block;
+        overflow-x:auto;
+    }
+}
+@media(max-width:480px){
+    .contenedorResumen{
+        grid-template-columns:1fr;
+    }
+    header h1{
+        font-size:24px;
+    }
+    section{
+        padding:15px;
+    }
+    button{
+        width:100%;
+    }
+}
