@@ -4,6 +4,13 @@ registrarPedido.php
  Controla el proceso de registro de un pedido.
  Verifica la información necesaria y deriva el
  proceso al módulo registrarCompra.php.
+
+Modificación realizada (Semana 8):
+ Se actualizó la documentación del archivo para
+ identificar la funcionalidad encargada del
+ registro de pedidos dentro del proyecto
+ Control_8 y facilitar su revisión mediante
+ Pull Request en GitHub.
 =========================================================*/
 
 require_once(__DIR__ . "/includes/configSesion.php");
