@@ -12,6 +12,7 @@ Modificación realizada (Semana 8):
  Control_8 y facilitar su revisión mediante
  Pull Request en GitHub.
 =========================================================*/
+// Documentación revisada para la entrega final del Control 8.
 
 require_once(__DIR__ . "/includes/configSesion.php");
 /*=========================================================
